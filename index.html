@@ -13,39 +13,39 @@
         <h1>TravelVibe</h1>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Explore</a></li>
-                <li><a href="#">Eat</a></li>
-                <li><a href="#">Stay</a></li>
-                <li><a href="#">Plan</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#eat">Eat</a></li>
+                <li><a href="#stay">Stay</a></li>
+                <li><a href="#plan">Plan</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
-<section class="hero">
+<section id="home" class="hero">
     <h2>Discover the Best of Your City</h2>
     <p>Uncover hidden gems, top restaurants, and beautiful stays all in one place.</p>
-    <a href="#" class="cta-button">Start Exploring</a>
+    <a href="#explore" class="cta-button">Start Exploring</a>
 </section>
 
-<section class="cards">
+<section id="explore" class="cards">
     <div class="card">
         <img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1?fit=crop&w=600&q=80" alt="Explore" />
         <h3>Explore</h3>
         <p>Visit must-see attractions and iconic sites around the city.</p>
     </div>
-    <div class="card">
+    <div id="eat" class="card">
         <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fit=crop&w=600&q=80" alt="Eat" />
         <h3>Eat</h3>
         <p>Discover top dining spots, from local gems to Michelin-starred restaurants.</p>
     </div>
-    <div class="card">
+    <div id="stay" class="card">
         <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?fit=crop&w=600&q=80" alt="Stay" />
         <h3>Stay</h3>
         <p>Find the best hotels, Airbnbs, and boutique stays curated for you.</p>
     </div>
-    <div class="card">
+    <div id="plan" class="card">
         <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?fit=crop&w=600&q=80" alt="Plan" />
         <h3>Plan</h3>
         <p>Create the perfect itinerary for your next unforgettable trip.</p>
@@ -58,8 +58,32 @@
 </section>
 
 <footer>
-    <p>&copy; 2025 TravelVibe. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> TravelVibe. All rights reserved.</p>
 </footer>
+
+<button onclick="topFunction()" id="scrollTopBtn" title="Go to top">↑</button>
+
+<script>
+// Auto-update footer year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Scroll-to-top button
+let mybutton = document.getElementById("scrollTopBtn");
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
 
 </body>
 </html>
